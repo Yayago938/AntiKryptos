@@ -3,7 +3,6 @@ uvicorn[standard]==0.29.0
 pydantic==2.7.1
 requests==2.31.0
 beautifulsoup4==4.12.3
-PyMuPDF==1.24.3
 pytesseract==0.3.10
 python-multipart==0.0.9
 numpy ==1.26.4
