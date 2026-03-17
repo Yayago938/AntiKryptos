@@ -1,0 +1,274 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "system": "SENTINEL-X Adversarial Intent Graph Cyber Defense System",
+    "description": "Human-readable explanation templates for each of the 12 intent dimensions and composite attack patterns."
+  },
+  "intent_dimensions": {
+    "urgency_induction": {
+      "label": "Urgency Induction",
+      "short": "The message pressures the user to act immediately.",
+      "detailed": "This message artificially creates a sense of extreme time pressure to override the recipient's rational judgement. Urgency induction is a hallmark of social-engineering attacks — when people are rushed, they make mistakes such as clicking malicious links without checking them first.",
+      "indicators": [
+        "urgent",
+        "immediately",
+        "within 24 hours",
+        "act now",
+        "expires today",
+        "last chance",
+        "ASAP"
+      ],
+      "mitre_technique": "T1598 - Spearphishing for Information",
+      "user_advice": "Slow down. Legitimate organisations never demand instantaneous responses. Take a moment to verify the request through official channels."
+    },
+    "authority_spoofing": {
+      "label": "Authority Spoofing",
+      "short": "The sender impersonates a trusted authority.",
+      "detailed": "The message falsely claims to originate from a trusted institution such as a bank, government body, or well-known technology company. Attackers leverage perceived authority to suppress scepticism and compel compliance.",
+      "indicators": [
+        "official notice",
+        "government of India",
+        "your bank",
+        "Microsoft",
+        "Apple",
+        "IT department",
+        "CEO",
+        "HR team"
+      ],
+      "mitre_technique": "T1656 - Impersonation",
+      "user_advice": "Independently verify the sender's identity. Contact the organisation directly using phone numbers or emails found on their official website — not from within this message."
+    },
+    "fear_amplification": {
+      "label": "Fear Amplification",
+      "short": "The message exploits fear to manipulate behaviour.",
+      "detailed": "This message deliberately amplifies fear by threatening negative consequences such as account suspension, financial loss, legal action, or data exposure. Fear overrides logical decision-making and is widely used in phishing and vishing campaigns.",
+      "indicators": [
+        "suspended",
+        "blocked",
+        "legal action",
+        "compromised",
+        "unauthorised access",
+        "penalty",
+        "deactivated"
+      ],
+      "mitre_technique": "T1585 - Establish Accounts (Social Engineering)",
+      "user_advice": "Fear-based threats are a red flag. Do not act on threats until you have independently confirmed the issue through official channels."
+    },
+    "trust_exploitation": {
+      "label": "Trust Exploitation",
+      "short": "The message manipulates existing trust relationships.",
+      "detailed": "The attacker exploits an established or implied relationship — friend, colleague, service provider — to lower the victim's guard. Unlike authority spoofing, trust exploitation relies on familiarity rather than institutional authority.",
+      "indicators": [
+        "as we discussed",
+        "per our conversation",
+        "your friend",
+        "your colleague",
+        "I'm reaching out on behalf of"
+      ],
+      "mitre_technique": "T1534 - Internal Spearphishing",
+      "user_advice": "Even messages from known contacts should be verified if they contain unusual requests, especially those involving money, credentials, or personal information."
+    },
+    "scarcity_signaling": {
+      "label": "Scarcity Signaling",
+      "short": "The message creates a false sense of limited availability.",
+      "detailed": "By claiming that an offer, resource, or opportunity is scarce or about to expire, the attacker pressures the victim into acting before they can rationally evaluate the situation. Scarcity is frequently combined with urgency cues.",
+      "indicators": [
+        "limited time",
+        "only 3 left",
+        "offer expires",
+        "exclusive access",
+        "first come first served",
+        "until midnight"
+      ],
+      "mitre_technique": "T1598 - Spearphishing for Information",
+      "user_advice": "Artificial scarcity is a classic manipulation tactic. Genuine opportunities allow time for due diligence."
+    },
+    "credential_harvesting": {
+      "label": "Credential Harvesting",
+      "short": "The message attempts to steal login credentials.",
+      "detailed": "This is a direct attempt to collect usernames, passwords, OTPs, PINs, or other authentication material. Credential harvesting is the primary goal of phishing attacks and typically involves directing the victim to a fake login page or requesting credentials directly.",
+      "indicators": [
+        "enter your password",
+        "verify your account",
+        "confirm your OTP",
+        "login to continue",
+        "click here to reset",
+        "provide your credentials"
+      ],
+      "mitre_technique": "T1056 - Input Capture / T1539 - Steal Web Session Cookie",
+      "user_advice": "Never enter credentials via a link in an email or SMS. Always navigate directly to the official website. Enable multi-factor authentication on all accounts."
+    },
+    "instruction_hijacking": {
+      "label": "Instruction Hijacking",
+      "short": "The message attempts to override system or AI instructions.",
+      "detailed": "This is a prompt injection or instruction-override attack targeting AI systems, chatbots, or automated workflows. The attacker embeds instructions designed to bypass safety controls, change system behaviour, or extract sensitive data from AI-powered applications.",
+      "indicators": [
+        "ignore previous instructions",
+        "new system prompt",
+        "you are now",
+        "override",
+        "bypass",
+        "disregard all prior rules",
+        "act as"
+      ],
+      "mitre_technique": "T1059 - Command and Scripting Interpreter (AI Prompt Injection)",
+      "user_advice": "This message contains prompt injection patterns. Do not process this through AI systems. Report to your security team immediately."
+    },
+    "data_exfiltration": {
+      "label": "Data Exfiltration",
+      "short": "The message attempts to exfiltrate sensitive data.",
+      "detailed": "The message is designed to transfer sensitive data — personal information, financial records, intellectual property — to an attacker-controlled destination. This may involve social engineering the victim into sending files, entering data into a form, or installing software that silently copies data.",
+      "indicators": [
+        "send your documents",
+        "attach your Aadhaar",
+        "upload your details",
+        "share your records",
+        "provide your bank statement"
+      ],
+      "mitre_technique": "T1041 - Exfiltration Over C2 Channel",
+      "user_advice": "Do not send personal or organisational documents in response to unsolicited requests. Verify the recipient's identity and data-handling policies before sharing anything."
+    },
+    "identity_spoofing": {
+      "label": "Identity Spoofing",
+      "short": "The message forges a false identity to deceive the recipient.",
+      "detailed": "The attacker has constructed a false identity — spoofed email address, cloned website, fabricated sender name — to deceive the recipient. Identity spoofing is a foundational element of most phishing, BEC (Business Email Compromise), and social-engineering attacks.",
+      "indicators": [
+        "from noreply@bank-secure.com",
+        "your-bank-alerts.net",
+        "from Apple Support <random@domain>",
+        "similar-looking domain"
+      ],
+      "mitre_technique": "T1586 - Compromise Accounts / T1608 - Stage Capabilities",
+      "user_advice": "Check the actual sender email address carefully (not just the display name). Look for slight misspellings in domain names. Use email authentication tools such as DMARC/DKIM verification."
+    },
+    "redirect_chaining": {
+      "label": "Redirect Chaining",
+      "short": "The message uses chained redirects to obscure a malicious destination.",
+      "detailed": "The message contains links that route through multiple intermediate URLs — often legitimate-looking domains — before arriving at a malicious destination. Redirect chaining is used to bypass URL reputation filters and make the final target harder to identify.",
+      "indicators": [
+        "bit.ly/",
+        "tinyurl.com/",
+        "tracking links",
+        "unusual redirects",
+        "t.co",
+        "shortened URLs",
+        "http not https"
+      ],
+      "mitre_technique": "T1608.005 - Link Target",
+      "user_advice": "Hover over links before clicking to preview the actual URL. Use a URL expander service to reveal the final destination of shortened links. Prefer navigating directly to known websites."
+    },
+    "payload_delivery": {
+      "label": "Payload Delivery",
+      "short": "The message is delivering a malicious payload.",
+      "detailed": "This message serves as the delivery vector for malware, ransomware, a trojanised document, or an exploit kit. Payload delivery can occur via file attachments, drive-by downloads triggered by link clicks, or embedded scripts in HTML emails.",
+      "indicators": [
+        "download attachment",
+        "open this file",
+        ".exe",
+        ".zip",
+        ".docm",
+        "macro-enabled",
+        "invoice attached",
+        "your receipt"
+      ],
+      "mitre_technique": "T1566 - Phishing / T1204 - User Execution",
+      "user_advice": "Do not download or open attachments from unexpected sources. Scan all attachments with up-to-date antivirus before opening. Block macro execution in Office documents."
+    },
+    "recon_probing": {
+      "label": "Reconnaissance Probing",
+      "short": "The message is gathering information about the target.",
+      "detailed": "This message is probing for information about the recipient's environment, credentials, relationships, or internal systems. Reconnaissance is the first phase of most advanced attacks — the data gathered is used to craft more convincing follow-up attacks.",
+      "indicators": [
+        "what software do you use",
+        "who is your IT provider",
+        "confirm your employee ID",
+        "which branch are you in",
+        "verify your details"
+      ],
+      "mitre_technique": "T1591 - Gather Victim Org Information",
+      "user_advice": "Be extremely cautious about sharing any organisational or personal information in response to unsolicited enquiries. Report suspicious information-gathering attempts to your security team."
+    }
+  },
+  "attack_patterns": {
+    "phishing": {
+      "label": "Phishing Attack",
+      "description": "A deceptive message designed to steal credentials or personal information by impersonating a trusted entity.",
+      "primary_dims": [
+        "credential_harvesting",
+        "authority_spoofing",
+        "urgency_induction"
+      ],
+      "kill_chain_stage": "Exploitation",
+      "severity": "high"
+    },
+    "spear_phishing": {
+      "label": "Spear Phishing",
+      "description": "A targeted phishing attack crafted with personal details to increase credibility against a specific individual.",
+      "primary_dims": [
+        "identity_spoofing",
+        "trust_exploitation",
+        "credential_harvesting"
+      ],
+      "kill_chain_stage": "Exploitation",
+      "severity": "critical"
+    },
+    "vishing": {
+      "label": "Voice/SMS Phishing (Vishing/Smishing)",
+      "description": "Phone or SMS-based social engineering using authority and urgency to extract information.",
+      "primary_dims": [
+        "authority_spoofing",
+        "urgency_induction",
+        "fear_amplification"
+      ],
+      "kill_chain_stage": "Delivery",
+      "severity": "high"
+    },
+    "prompt_injection": {
+      "label": "AI Prompt Injection",
+      "description": "An attempt to hijack AI system instructions by embedding override commands in user input.",
+      "primary_dims": [
+        "instruction_hijacking",
+        "data_exfiltration"
+      ],
+      "kill_chain_stage": "Exploitation",
+      "severity": "critical"
+    },
+    "malware_delivery": {
+      "label": "Malware / Ransomware Delivery",
+      "description": "A message serving as the carrier for a malicious executable, script, or infected document.",
+      "primary_dims": [
+        "payload_delivery",
+        "redirect_chaining"
+      ],
+      "kill_chain_stage": "Delivery",
+      "severity": "critical"
+    },
+    "bec": {
+      "label": "Business Email Compromise (BEC)",
+      "description": "Impersonation of executives or vendors to fraudulently redirect payments or harvest information.",
+      "primary_dims": [
+        "identity_spoofing",
+        "authority_spoofing",
+        "trust_exploitation"
+      ],
+      "kill_chain_stage": "Exploitation",
+      "severity": "critical"
+    }
+  },
+  "severity_descriptions": {
+    "critical": "Immediate threat. Block and quarantine. Do not interact with this message in any way.",
+    "high": "Significant threat detected. Treat with extreme suspicion. Verify through independent channels.",
+    "medium": "Suspicious patterns detected. Exercise caution and verify sender identity.",
+    "low": "Minor risk indicators present. Normal vigilance applies.",
+    "informational": "Low-level signals detected. No immediate action required."
+  },
+  "kill_chain_stage_descriptions": {
+    "Reconnaissance": "Attacker is gathering information to plan a more targeted attack.",
+    "Weaponization": "A malicious payload or exploit has been prepared for delivery.",
+    "Delivery": "The attack is being transmitted to the target via email, SMS, or web.",
+    "Exploitation": "The attacker is attempting to exploit a vulnerability, credential, or trust relationship.",
+    "Installation": "Malware or a backdoor is being installed on the victim's system.",
+    "Command & Control": "Attacker is establishing remote control over a compromised system.",
+    "Actions on Objectives": "Attacker is completing their goal: data theft, financial fraud, or destruction."
+  }
+}
